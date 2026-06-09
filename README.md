@@ -1,2 +1,12 @@
 # Ciberfisicos-TDE-2-Deteccao-E-Recuperacao-De-Impasses
-Trabalho TDE 2 sobre Detecção e recuperação de impasses.
+Nome dos integrantes: Artur Conratt, André Felipe, Eduardo Guilherme, Gabriel Moreno
+Linguagem escolhida: Python
+Link do video do YouTube:
+
+
+Instruções de compilação e execução: 
+
+
+Relátorio Técnico:
+
+Prints e Logs:
