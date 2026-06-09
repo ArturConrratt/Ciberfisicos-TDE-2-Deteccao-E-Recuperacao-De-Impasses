@@ -53,3 +53,14 @@ Versão incorreta:
 Versão funcional:
 <img width="886" height="566" alt="image" src="https://github.com/user-attachments/assets/90c19197-8b7e-46e7-9516-ec0472e99fe3" />
 <img width="736" height="1191" alt="image" src="https://github.com/user-attachments/assets/0e324966-6340-4c22-8b1f-82f823dfdd1f" />
+
+
+PARTE 2 - THREADS E SEMÁFOROS
+
+Tabelas de resultados:
+
+Versão incorreta:
+
+
+
+Versão Correta:
