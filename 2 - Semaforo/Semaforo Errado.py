@@ -27,8 +27,8 @@ thread = []
 #Cria uma thread q vai fazer a tarefa, executa a função da thread e adiciona na lista.
 for _ in range (T):
     t = threading.Thread(target=tarefa)
-thread.append(t)
-t.start()
+    thread.append(t)
+    t.start()
 
 #espera todas as threads terminarem pra nao dar ruim.
 for t in thread:
