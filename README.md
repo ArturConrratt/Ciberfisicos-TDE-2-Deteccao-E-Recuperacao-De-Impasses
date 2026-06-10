@@ -59,8 +59,18 @@ PARTE 2 - THREADS E SEMÁFOROS
 
 Tabelas de resultados:
 
+
 Versão incorreta:
+<img width="393" height="155" alt="image" src="https://github.com/user-attachments/assets/3271ab11-b50f-4cc6-9d3f-df673bff44bb" />
 
 
 
 Versão Correta:
+
+
+<img width="384" height="168" alt="image" src="https://github.com/user-attachments/assets/4d8dc72f-03e7-461a-afbc-a9592bbd72d5" />
+
+
+PARTE 3 - DEADLOCKS
+
+Tabelas de resultados:
