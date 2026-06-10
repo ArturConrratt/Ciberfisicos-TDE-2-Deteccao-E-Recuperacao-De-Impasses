@@ -57,10 +57,28 @@ Versão funcional:
 
 PARTE 2 - THREADS E SEMÁFOROS
 
-Tabelas de resultados:
+Nesta seção, analisamos o impacto da falta de sincronização em sistemas concorrentes  e como um semáforo binário resolve esse problema, garantindo a consistência dos dados.
+
+Pergunta -
+Por que a versão sem sincronização perde incrementos?
+Resposta -
+Ela perde incrementos porque é burra? não ela perde incrementos porque elas começam lendo o mesmo valor na contagem “count” e sobrescrevem os valores uma da outra, fazendo isso elas perdem uma atualização.
+Pergunta -
+Por que a versão com semáforo é correta?
+Resposta -
+Esta versão é a correta, pois o semáforo começa com um tipo de permissão, quando a thread excuta a função “sem.acquire()” e ela se torna a única lá dentro, como se fosse uma pessoa em uma roupa, cada thread só pode ser executada em seguida caso a próxima “roupa” esteja liberada, e tem também “sem.release()” que impede que as threads se sobrescrevam, para não dar erro.
+
+O trade-off de Throughput 
+Podemos começar analisando os tempos de demora dos diferentes tipos de semáforo, sendo que um deles elimina o paralelismo real em parte do código fazendo com que as threads precisem esperar uma por uma, como uma fila, e isso reduz o throughput mas pelo menos garante que está tratando de dados corretos.
+
+Conceito de Visibilidade e Ordenação 
+Para ententer este conceito vamos analisar que em Python o uso de “acquire()” e “release()” do módulo “threading” atua como uma barreira de memória implícita, que faz isso funcionar como um farol para as próximas threads que vão adquirir o semáforo, na ordem correta.
+
 
 
 Versão incorreta:
+
+
 <img width="393" height="155" alt="image" src="https://github.com/user-attachments/assets/3271ab11-b50f-4cc6-9d3f-df673bff44bb" />
 
 
