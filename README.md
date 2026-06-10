@@ -91,4 +91,38 @@ Versão Correta:
 
 PARTE 3 - DEADLOCKS
 
+O deadlock ocorre na versão incorreta pois a Thread 1 tenta pegar o Lock A e depois o Lock B, enquanto a Thread 2 tenta pegar o Lock B e depois o Lock A. Devido à concorrência e ao atraso (time.sleep), a Thread 1 segura o Lock A e a Thread 2 segura o Lock B, fazendo com que ambas fiquem esperando mutuamente de forma infinita pelos recursos retidos pela outra.
+
+As 4 condições de Coffman presentes:
+1. Exclusão mutua: Cada lock (A ou B) só pode ser retido por uma thread por vez.
+2. Posse e espera: A Thread 1 segura o Lock A enquanto espera pelo Lock B (e a Thread 2 segura o Lock B esperando pelo Lock A).
+3. Prioridade/preferencia: Um lock não pode ser retirado de uma thread à força.
+4. Espera circular: A Thread 1 espera pela Thread 2 que por sua vez espera pela Thread 1.
+
+Na versão funcional, definimos uma hierarquia de locks (ordem global). Ambas as threads adquirem primeiro o Lock A e depois o Lock B, quebrando a condição de Espera Circular.
+
+Pergunta - 
+Como identificar visualmente que o programa entrou em deadlock?
+Resposta - 
+O terminal para de produzir novos logs e a execução nunca é encerrada, permanecendo travada nas chamadas do método `.join()`.
+
+Pergunta - 
+Qual é a principal diferença na lógica concorrente das duas versões?
+Resposta - 
+A ordem de aquisição dos recursos. A versão incorreta adquire locks de espera circular, enquanto a correta adquire locks na mesma sequência exata em todas as threads.
+
+Prints e Logs:
+Versão incorreta:
+<img width="886" alt="print_versao_incorreta_deadlock" src="image%20copy.png" />
+
+Versão Correta:
+<img width="886" alt="print_versao_correta_deadlock" src="image.png" />
+
 Tabelas de resultados:
+
+Tabelas de resultados:
+
+| Versão    | sequência thread 1    | sequência thread 2  | comportamento do programa |
+
+| incorreto | lock A -> lock B      | lock B -> lock A    | travamento infinito       |
+| correto   | lock A -> lock B      | lock A -> lock B    | finaliza com sucesso      |
