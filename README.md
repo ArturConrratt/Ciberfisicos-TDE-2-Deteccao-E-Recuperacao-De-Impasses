@@ -126,8 +126,6 @@ Versão Correta:
 
 Tabelas de resultados:
 
-Tabelas de resultados:
-
 | Versão    | sequência thread 1    | sequência thread 2  | comportamento do programa |
 
 | incorreto | lock A -> lock B      | lock B -> lock A    | travamento infinito       |
