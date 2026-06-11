@@ -113,10 +113,12 @@ A ordem de aquisição dos recursos. A versão incorreta adquire locks de espera
 
 Prints e Logs:
 Versão incorreta:
-<img width="886" alt="print_versao_incorreta_deadlock" src="image%20copy.png" />
+<img width="887" height="331" alt="image" src="https://github.com/user-attachments/assets/cb40f296-3d47-445b-9fff-994c2ea4ada0" />
+" />
 
 Versão Correta:
-<img width="886" alt="print_versao_correta_deadlock" src="image.png" />
+<img width="887" height="441" alt="image" src="https://github.com/user-attachments/assets/894fe696-c2c3-436b-ade3-16df7731b52a" />
+
 
 Tabelas de resultados:
 
