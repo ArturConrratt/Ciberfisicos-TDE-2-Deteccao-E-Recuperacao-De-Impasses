@@ -91,15 +91,15 @@ Versão Correta:
 
 PARTE 3 - DEADLOCKS
 
-O deadlock ocorre na versão incorreta pois a Thread 1 tenta pegar o Lock A e depois o Lock B, enquanto a Thread 2 tenta pegar o Lock B e depois o Lock A. Devido à concorrência e ao atraso (time.sleep), a Thread 1 segura o Lock A e a Thread 2 segura o Lock B, fazendo com que ambas fiquem esperando mutuamente de forma infinita pelos recursos retidos pela outra.
+O dealock ocorre na versão incorreta pois a Thread 1 tenta pegar o Lock A e depois o Lock B enquanto a Thread 2 tenta pegar o Lock B e depois o Lock A. Devido a concorrencia e ao atraso time.sleep, a Thread 1 segura o Lock A e a Thread 2 segura o Lock B, fazendo com que ambas fiquem esperando juntas de forma infinita pelos recursos retidos pela outra.
 
-As 4 condições de Coffman presentes:
-1. Exclusão mutua: Cada lock (A ou B) só pode ser retido por uma thread por vez.
+As 4 condiçoes de Coffman presentes:
+1. Exclusao mutua: Cada lock (A ou B) só pode ser retido por uma thread por vez.
 2. Posse e espera: A Thread 1 segura o Lock A enquanto espera pelo Lock B (e a Thread 2 segura o Lock B esperando pelo Lock A).
 3. Prioridade/preferencia: Um lock não pode ser retirado de uma thread à força.
 4. Espera circular: A Thread 1 espera pela Thread 2 que por sua vez espera pela Thread 1.
 
-Na versão funcional, definimos uma hierarquia de locks (ordem global). Ambas as threads adquirem primeiro o Lock A e depois o Lock B, quebrando a condição de Espera Circular.
+Na versão funcional, é definido uma hierarquia de locks . Ambas as threads adquirem primeiro o Lock A e depois o Lock B, quebrando a condição de espera circular.
 
 Pergunta - 
 Como identificar visualmente que o programa entrou em deadlock?
@@ -107,17 +107,18 @@ Resposta -
 O terminal para de produzir novos logs e a execução nunca é encerrada, permanecendo travada nas chamadas do método `.join()`.
 
 Pergunta - 
-Qual é a principal diferença na lógica concorrente das duas versões?
+Qual é a principal diferença na logica concorrente das duas versoes?
 Resposta - 
-A ordem de aquisição dos recursos. A versão incorreta adquire locks de espera circular, enquanto a correta adquire locks na mesma sequência exata em todas as threads.
+A ordem de aquisição dos recursos. A versão incorreta adquire lock de espera circular, enquanto a correta adquire locks na mesma sequencia exata em todas as theads.
 
 Prints e Logs:
-Versão incorreta:
+Versao incorreta:
 
 
-<img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/cb40f296-3d47-445b-9fff-994c2ea4ada0" />
+<img width="600" height="200" alt="image"  alt="image" src="https://github.com/user-attachments/assets/407c56e4-a5ea-48c5-a260-58ab602e944f" />
 
-Versão Correta:
+
+Versao Correta:
 
 
 
@@ -126,7 +127,7 @@ Versão Correta:
 
 Tabelas de resultados:
 
-| Versão    | sequência thread 1    | sequência thread 2  | comportamento do programa |
+| Versao    | sequencia thread 1    | sequencia thread 2  | comportamento do programa |
 
 | incorreto | lock A -> lock B      | lock B -> lock A    | travamento infinito       |
 | correto   | lock A -> lock B      | lock A -> lock B    | finaliza com sucesso      |
