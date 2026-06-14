@@ -1,7 +1,7 @@
 # Ciberfisicos-TDE-2-Deteccao-E-Recuperacao-De-Impasses
 Nome dos integrantes: Artur Conratt, André Felipe, Eduardo Guilherme, Gabriel Moreno
 Linguagem escolhida: Python
-Link do video do YouTube:
+Link do video do YouTube: https://youtu.be/K_K9uG82DsA
 
 
 
@@ -131,3 +131,6 @@ Tabelas de resultados:
 
 | incorreto | lock A -> lock B      | lock B -> lock A    | travamento infinito       |
 | correto   | lock A -> lock B      | lock A -> lock B    | finaliza com sucesso      |
+
+
+
